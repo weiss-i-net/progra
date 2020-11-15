@@ -22,7 +22,7 @@ public class InterestCalc {
                 + "Zeit: Berechnet den Betrag , der nach einer gegebenen Zeit angespart wurde.\n");
         while (!Arrays.asList("Ziel", "Zeit").contains(mode_string))
             mode_string = SimpleIO.getString("Bitte geben Sie entweder \"Ziel\" oder \"Zeit\" ein.\n");
-        return mode_string.equals("Ziel") ? false : true;
+        return mode_string.equals("Zeit");
     }
 
     private static int getTimeInYears() {
@@ -46,8 +46,8 @@ public class InterestCalc {
                 curr_money *= intrest_rate;
 
             SimpleIO.output("Nach " + max_year + " Jahren mit einem Zinzsatz von "
-                            + String.format("%.2f", (intrest_rate - 1)*100) + "% hat man "
-                            + String.format("%.2f", curr_money) + "€.");
+                    + String.format("%.2f", (intrest_rate - 1)*100) + "% hat man "
+                    + String.format("%.2f", curr_money) + "€.");
 
         } else {
 
