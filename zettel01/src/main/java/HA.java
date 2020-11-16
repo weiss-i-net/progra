@@ -12,7 +12,7 @@ public class HA{
         double zwischenergebnis;
 
 
-        startbetrag= SimpleIO.getDouble("Bitte geben Sie den Startbetrag ein"); //frage nach startbetrag
+        startbetrag = SimpleIO.getDouble("Bitte geben Sie den Startbetrag ein"); //frage nach startbetrag
 
         zinssatz= SimpleIO.getDouble("Bitte geben Sie den Zinssatz ein"); //frage nach zinssatz
 
@@ -33,7 +33,6 @@ public class HA{
             //zinssatz in Kommazahlmain
             jahr= 0;
 
-
             while(ergebnis<=zielbetrag){
                 zwischenergebnis = (ergebnis * zinssatz) / (double)100;
                 ergebnis= zwischenergebnis + ergebnis;
@@ -42,22 +41,22 @@ public class HA{
 
 
 
-            String textausgabeziel_1 = " Es dauert "+jahr;
-            String textausgabeziel_2 = " Jahre bei einem Zinssatz von "+ zinssatz;
-            String textausgabeziel_3 = " % um von "+ startbetrag;                                                   //Ausgabe, die generiert wird durch die eingegebenen Werte
-            String textausgabeziel_4 = " auf den Betrag " + zielbetrag;
-            String textausgabeziel_5 = " zu sparen . Nach dieser Zeit hat man " + ergebnis;
 
-            SimpleIO.output(textausgabeziel_1+textausgabeziel_2+textausgabeziel_3+textausgabeziel_4+textausgabeziel_5+".");
+            SimpleIO.output(" Es dauert " + jahr
+                            + " Jahre bei einem Zinssatz von " + zinssatz
+                            + " % um von " + startbetrag
+                            + " auf den Betrag " + zielbetrag
+                            + " zu sparen . Nach dieser Zeit hat man " + ergebnis);
+
             System.exit(0);
         }
         else {
             if (auswahl.equals("zeit") || auswahl.equals("Zeit")){
                 jahr = SimpleIO.getInt("Bitte geben Sie eine beliebige Anzahl von Jahren an.");
 
-                if(jahr==0) //Fehler: jahr = 0
+                if(jahr < 0) //Fehler: jahr = 0
                 {
-                    SimpleIO.output("0 ist kein gültiges Jahr");
+                    SimpleIO.output(jahr + " ist kein gültiges Jahr");
                     System.exit(0);
                 }
 
