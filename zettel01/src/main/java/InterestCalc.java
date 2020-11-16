@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class InterestCalc {
     private static double getMoney(double min_money) {
         double money = SimpleIO.getDouble("Bitte geben Sie den Betrag ein.\n");
@@ -20,7 +18,7 @@ public class InterestCalc {
         String mode_string = SimpleIO.getString("Bitte waehlen Sie aus:\n"
                 + "Ziel: Berechnet die Zeit, bis ein gegebener Betrag angespart wurde.\n"
                 + "Zeit: Berechnet den Betrag , der nach einer gegebenen Zeit angespart wurde.\n");
-        while (!Arrays.asList("Ziel", "Zeit").contains(mode_string))
+        while (!mode_string.equals("Ziel") && !mode_string.equals("Zeit"))
             mode_string = SimpleIO.getString("Bitte geben Sie entweder \"Ziel\" oder \"Zeit\" ein.\n");
         return mode_string.equals("Zeit");
     }
