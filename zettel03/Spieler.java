@@ -34,13 +34,13 @@ public class Spieler {
                                   new Spieler("Helmut",    38.75),
                                   new Spieler("Erwin",     11.25) };
 
-        Spieler besterSpielerSpielGruppe = Spieler.besterSpieler(spielGruppe);
+        Spieler besterSpieler= Spieler.besterSpieler(spielGruppe);
 
-        besterSpielerSpielGruppe.kartenhand = new Karte[] { Karte.neueKarte("HERZ", "SIEBEN"),
+        besterSpieler.kartenhand = new Karte[] { Karte.neueKarte("HERZ", "SIEBEN"),
                                                             Karte.neueKarte("HERZ", "NEUN"  ),
                                                             Karte.neueKarte("KARO", "KOENIG") };
 
-        besterSpielerSpielGruppe.kannBedienen(Karte.neueKarte("KARO", "BUBE"));
+        besterSpieler.kannBedienen(Karte.neueKarte("KARO", "BUBE"));
 
     }
 }
