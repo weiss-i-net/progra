@@ -14,7 +14,7 @@ public class Karte {
     }
 
     public String toString() {
-        return this.kartenFarbe.toString() + this.kartenWert.toString();
+        return kartenFarbe.toString() + kartenWert.toString();
     }
 
     public static Karte neueKarte(String f, String w) {
@@ -37,9 +37,9 @@ public class Karte {
     }
 
     public boolean bedient(Karte other) {
-        return this.kartenWert  == other.kartenWert
-            || this.kartenFarbe == other.kartenFarbe
-            || this.kartenWert  == Wert.BUBE;
+        return kartenWert  == other.kartenWert
+            || kartenFarbe == other.kartenFarbe
+            || kartenWert  == Wert.BUBE;
     }
 
     public boolean bedienbar(Karte... karten) {
