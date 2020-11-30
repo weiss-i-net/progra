@@ -1,60 +1,41 @@
-public class Karte {
 
-    enum Farbe { KREUZ, PIK, HERZ, KARO }
 
-    enum Wert { SIEBEN, ACHT, NEUN,   ZEHN,
-                BUBE,   DAME, KOENIG, ASS }
+public class Karte
+{
+    public enum Farbe {KREUZ, PIK, HERZ, KARO}
+    public enum Wert {SIEBEN, ACHT, NEUN, ZEHN, BUBE, DAME, KÖNIG, ASS}
 
-    public Wert kartenWert;
-    public Farbe kartenFarbe;
+    public Farbe farbe;
+    public Wert wert;
 
-    Karte(Farbe initFarbe, Wert initWert) {
-        kartenWert = initWert;
-        kartenFarbe = initFarbe;
+    //public Karte(Farbe farbe, Wert wert)
+    //{
+        //Karte(farbe,wert);
+    //}
+
+    public String toString(){
+        return farbe.toString() + wert.toString();
     }
 
-    public String toString() {
-        return kartenFarbe.toString() + kartenWert.toString();
+
+    public static Karte neueKarte(Farbe f, Wert w){
+        Karte neueKarte = new Karte();
+        neueKarte.farbe = f;
+        neueKarte.wert = w;
+
+        return neueKarte;
     }
 
-    public static Karte neueKarte(String f, String w) {
-        return new Karte(Farbe.valueOf(f), Wert.valueOf(w));
+    public static Karte neueKarte(String f, String w){
+        return neueKarte(Farbe.valueOf(f), Wert.valueOf(w));
     }
 
-    public static int kombinationen() {
-        return Farbe.values().length * Wert.values().length;
+    public static int kombination(){
+        return Farbe.values().length*Wert.values().length;
     }
 
     public static Karte[] skatblatt() {
-        Karte[] outSkatblatt = new Karte[Karte.kombinationen()];
-        int i = 0;
-        for (Farbe f : Farbe.values())
-            for (Wert w : Wert.values()) {
-                outSkatblatt[i] = new Karte(f, w);
-                ++i;
-            }
-        return outSkatblatt;
-    }
 
-    public boolean bedient(Karte other) {
-        return kartenWert  == other.kartenWert
-            || kartenFarbe == other.kartenFarbe
-            || kartenWert  == Wert.BUBE;
-    }
 
-    public boolean bedienbar(Karte... karten) {
-        for (Karte currKarte : karten)
-            if (currKarte.bedient(this))
-                return true;
-        return false;
-    }
 
-    public static void druckeEinbahnBedienungen() {
-        Karte[] alleKarten = Karte.skatblatt();
-        for (Karte karteA : alleKarten)
-            for (Karte karteB : alleKarten)
-                if (karteA.bedient(karteB) && !karteB.bedient(karteA))
-                    System.out.println(karteA + " bedient " + karteB + ", aber "
-                                     + karteB + " nicht " +   karteA + ".");
-    }
 }
