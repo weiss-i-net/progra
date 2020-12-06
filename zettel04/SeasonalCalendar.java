@@ -32,11 +32,10 @@ public class SeasonalCalendar {
         StringBuilder returnStringBuilder = new StringBuilder();
         returnStringBuilder.append(leftPadding + monthChars + System.lineSeparator());
 
-        for (Product currProduct : productArray) {
+        for (Product currProduct : productArray)
             returnStringBuilder.append(pad(currProduct.getName() + ": ", leftWhitespaceCount, ' ')
                                                      + currProduct.stringifyIsRegional() + System.lineSeparator()
                                        + leftPadding + currProduct.stringifyIsImported() + System.lineSeparator());
-        }
 
         return returnStringBuilder.toString();
     }
