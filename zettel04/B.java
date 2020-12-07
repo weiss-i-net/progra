@@ -7,9 +7,9 @@ public class B {
         b.a(Integer.valueOf(100));    // a1
 
         double r1 = b.b(100D);        // b1
-        int r2 = (int) b.b(100);      // error
+        int r2 = (int) b.b(100);      // b2
 
-        c(Integer.valueOf(100), "0"); // c3
+        c(Integer.valueOf(100), "0"); // c2
         c(100L, "0");                 // c2
         c(100L, '0');                 // c1
     }
