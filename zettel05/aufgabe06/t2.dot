@@ -9,26 +9,29 @@ null1[shape=point]
 null2[shape=point]
 6 -> null2;
 15 -> 23;
-23 -> 21;
-21 -> 20;
-20 -> 17;
+23 -> 16;
 null3[shape=point]
-17 -> null3;
+16 -> null3;
+16 -> 22;
+22 -> 18;
 null4[shape=point]
-17 -> null4;
+18 -> null4;
+18 -> 20;
 null5[shape=point]
 20 -> null5;
-21 -> 22;
+20 -> 21;
 null6[shape=point]
-22 -> null6;
+21 -> null6;
 null7[shape=point]
-22 -> null7;
-23 -> 25;
-25 -> 24;
+21 -> null7;
 null8[shape=point]
-24 -> null8;
+22 -> null8;
+23 -> 29;
+29 -> 28;
 null9[shape=point]
-24 -> null9;
+28 -> null9;
 null10[shape=point]
-25 -> null10;
+28 -> null10;
+null11[shape=point]
+29 -> null11;
 }

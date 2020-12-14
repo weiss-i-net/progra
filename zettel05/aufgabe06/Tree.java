@@ -67,7 +67,6 @@ public class Tree {
      * @return true, falls x im Baum enthalten ist, sonst false
      */
     public boolean search(int x) {
-        System.out.println("Searching for: " + x);
         if (isEmpty())
             return false;
         root = root.rotationSearch(x);
