@@ -4,7 +4,7 @@ class Test {
     public static void main(String[] args) {
         Punkt a = new Punkt(1, 2);
         Punkt b = new Punkt(new BigDecimal(2), new BigDecimal(3));
-        assert a.abstand(b).doubleValue() > 1.4;
+        assert a.abstand(b).doubleValue() == Math.sqrt(2);
         assert !a.equals(b);
 
         Gerade A = new Gerade(a, b);
