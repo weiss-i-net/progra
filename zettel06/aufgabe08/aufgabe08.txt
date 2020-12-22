@@ -1,0 +1,38 @@
+  Aufgabe 8
+
+
+g)  Es is nicht möglich die neue Grade über die Attribute von Strahl zu
+    verändern, da die verwendeten Punkte zwar identisch sind, aber nicht
+    veränderbar sind, da sie 'final' sind (und die BigDecimal Werte der Punkte
+    ebenfalls final sind).
+
+
+h)  verlaengern() muss nicht überschrieben werden, da damit dann zu einer
+    Geraden verlängert werden kann. (überladene Methode)
+    getStart() und getDir() müssen nicht überschrieben werden, da sie private
+    sind und somit von Strecke nicht sichtbar.
+
+
+i)  1. Object.getClass aus Strecke.equals:34,
+       Aufruf einer öffentlichen Methode einer Überklasse
+
+    2. Object.getClass aus Strecke.equals:34,
+       Aufruf einer öffenlichen Methode der eigenen Klasse
+
+    3. Gerade.getPointA aus Strecke.equals:35,
+       Aufruf einer öffentlichen Methode einer Überklasse
+
+    4. Point.equals aus Strecke.equals:35,
+       Aufruf einer öffentlichen Methode der eigenen Klasse
+
+    5. Object.getClass aus Punkt.equals:33,
+       Aufruf einer öffentlichen Methode einer Überklasse
+
+    6. Object.getClass aus Punkt.equals:33,
+       Aufruf einer öffenlichen Methode der eigenen Klasse
+
+    7. BigDecimalUtility.equalValues aus Punkt.equals:32,
+       Aufruf einer öffentlichen statischen Methode einer anderen Klasse
+
+    8. bigDecimal.scale aus BigDecimalUtility:8,
+       Aufruf einer öffentlichen Methode der eigenen Klasse
