@@ -23,7 +23,7 @@ public abstract class AbstractReadableMap <K, V> implements ReadableMap <K, V>
     }
 
     @Override
-    public ImmutableMap <K,V> asImmutableMap (){
+    public ImmutableMap <K,V> asImmutableMap(){
         return new ImmutableMap<K, V>(this.entries);
     }
 
