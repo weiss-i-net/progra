@@ -41,12 +41,12 @@ setEntry matrix i j aij
           getRows :: Int -> Int -> [[Int]]
           getRows start stop
               | start > stop  = []
-              | otherwise = matrix !! start : getRows (start+1) stop
+              | otherwise     = matrix !! start : getRows (start+1) stop
 
           newRow :: [Int]
           newRow = getElems 0 (j-1)  ++  [aij]  ++  getElems (j+1) (colCount - 1)
                    where getElems :: Int -> Int -> [Int]
                          getElems start stop
                              | start > stop = []
-                             | otherwise = matrix !! i !! start : getElems (start+1) stop
+                             | otherwise    = matrix !! i !! start : getElems (start+1) stop
 
