@@ -37,16 +37,57 @@ setEntry matrix i j aij
                                        ++ getRows (i+1) (rowCount - 1)
 
     where (rowCount, colCount) = dimensions matrix
+          newRow               = getElems 0 (j-1)  ++  [aij]  ++  getElems (j+1) (colCount - 1)
 
           getRows :: Int -> Int -> [[Int]]
           getRows start stop
               | start > stop  = []
               | otherwise     = matrix !! start : getRows (start+1) stop
 
-          newRow :: [Int]
-          newRow = getElems 0 (j-1)  ++  [aij]  ++  getElems (j+1) (colCount - 1)
-                   where getElems :: Int -> Int -> [Int]
-                         getElems start stop
-                             | start > stop = []
-                             | otherwise    = matrix !! i !! start : getElems (start+1) stop
+          getElems :: Int -> Int -> [Int]
+          getElems start stop
+              | start > stop = []
+              | otherwise    = matrix !! i !! start : getElems (start+1) stop
+
+
+-- addiert 2 Matrizen elementenweise und gibt das Ergebnis zurück
+add :: [[Int]] -> [[Int]] -> [[Int]]
+add matrixA matrixB
+    | colsA /= colsB  || rowsA /= rowsB || colsA == -1 = error "Dimension mismatch"
+    | otherwise = addRows 0
+    where (rowsA, colsA) = dimensions matrixA
+          (rowsB, colsB) = dimensions matrixB
+
+          addRows :: Int -> [[Int]]
+          addRows i
+              | i > rowsA - 1 = []
+              | otherwise = addElems i 0 : addRows (i + 1)
+
+          addElems :: Int -> Int -> [Int]
+          addElems currRow i
+              | i > colsA - 1 = []
+              | otherwise = matrixA !! currRow !! i + matrixB !! currRow !! i : addElems currRow (i+1)
+
+
+-- test matrizen
+a :: [[Int]]
+a = [[1,2],
+     [3,4]]
+
+a' :: [[Int]]
+a' = [[1,0],
+      [0,0]]
+
+b :: [[Int]]
+b = [[1,2,3],
+     [4,5,6]]
+
+b' :: [[Int]]
+b' = [[-1,-2,-3],
+      [-4,-5,-6]]
+
+c :: [[Int]]
+c = [[1,0,0],
+     [0,1,0],
+     [0,0,1]]
 

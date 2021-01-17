@@ -1,0 +1,13 @@
+a) nicht korrekt, da (x:[]] eine Liste ist und auf der linken Seite des :
+   Operators steht
+
+b) korrekt, linke Seite:  m+2 [Int]
+            rechte Seite: m+1 [Int]
+
+c) nicht korrekt, da (x : y) eine Liste auf der linken Seite eines : Operator
+   ist
+
+d) nicht korrekt, da (z : ys) eine Liste auf der linken Seite eines : Operator
+   ist
+
+e) nicht korrekt, da [x,y] eine Liste auf er linken Seiten eines : Operator ist
