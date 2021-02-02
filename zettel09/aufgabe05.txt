@@ -1,0 +1,10 @@
+i)
+f :: Int ->
+
+
+ii)
+g :: ([a] -> b) -> [[a] -> b] -> b
+
+
+iii)
+h :: [Int] -> Int -> [Int] -> Bool

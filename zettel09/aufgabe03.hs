@@ -76,4 +76,3 @@ datenIntervalle (Node _ _ x) = Node min max x
                                    greaterTree :: MultiTree Int -> MultiTree Int -> Bool
                                    greaterTree (Leaf a) (Leaf b) = a > b
                                    greaterTree a b               = 
-
