@@ -8,7 +8,9 @@ rot(isskogel).
 
 schwarz(teufeltal).
 
-endetIn(start,      sonnalm).
+start(sonnalm).
+start(teufeltal).
+
 endetIn(sonnalm,    vorkogel).
 endetIn(vorkogel,   isskogel).
 endetIn(isskogel,   tal).
@@ -18,7 +20,6 @@ endetIn(arbiskogel, plattenalm).
 endetIn(plattenalm, wiesenalm).
 endetIn(wiesenalm,  tal).
 
-endetIn(start,      teufeltal).
 endetIn(teufeltal,  wiesenalm).
 
 
@@ -37,9 +38,9 @@ append(nil, B, B).
 append(cons(A, As), B, cons(A, Cs)) :- append(As, B, Cs).
 
 tourOfLength(cons(tal, nil), 0).
-tourOfLength(cons(tal,   T), L) :- append(cons(P, Ps), Rest, T),
-                                   endetIn(start, P),
-                                   pathOfLength(cons(  P,   Ps), LenP),
+tourOfLength(cons(tal,   T), L) :- start(P),
+                                   append(cons(P, PS), Rest, T),
+                                   pathOfLength(cons(P, PS), LenP),
                                    tourOfLength(cons(tal, Rest), LenR),
                                    add(LenP, LenR, L).
 
